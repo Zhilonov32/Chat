@@ -1,0 +1,38 @@
+.message
+  display: flex
+  justify-content: flex-end
+  margin-top: 15px
+  text-align: right
+  &__wrapper
+    position: relative
+    font-size: 15px
+    line-height: 1
+    width: auto
+  &--sending
+    color: darkgrey
+  &--error
+    color: red
+    cursor: pointer
+  &__button
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 15px
+    height: 15px
+    border: 1px solid #8d1717
+    border-radius: 50%
+  &__icon
+    padding: 2px
+  &--recipient
+    justify-content: flex-start
+    text-align: left
+.message_time
+  font-size: 0.7rem
+.message_user
+  font-size: 0.7rem
+
+.button-close
+  position: absolute
+  top: 50%
+  left: -20px
+  transform: translateY(-50%)

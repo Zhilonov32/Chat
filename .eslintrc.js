@@ -1,0 +1,132 @@
+module.exports = {
+    env: {
+        browser: true,
+        commonjs: true,
+        es6: true,
+        node: true,
+        jest: true,
+    },
+    plugins: [
+        'vue',
+        'import',
+    ],
+    extends: [
+        'airbnb-base',
+        'plugin:vue/recommended',
+    ],
+    parserOptions: {
+        parser: '@babel/eslint-parser',
+        sourceType: 'module',
+        ecmaVersion: 2020,
+    },
+    rules: {
+        'brace-style': ['error', '1tbs', {allowSingleLine: false}],
+        'vue/max-attributes-per-line': ['error', {
+            singleline: 1,
+            multiline: {
+                max: 1,
+                allowFirstLine: false,
+            },
+        }],
+        'no-useless-concat': 'off',
+        'prefer-template': 'off',
+        'import/prefer-default-export': 'off',
+        'import/no-dynamic-require': 'off',
+        'class-methods-use-this': 'off',
+        'no-param-reassign': 'off',
+        'consistent-return': 'off',
+        'default-case': 'off',
+        'max-len': 'off',
+        'no-plusplus': 'off',
+        'arrow-parens': ['error', 'always'],
+        'no-console': 'error',
+        camelcase: 'warn',
+        curly: ['error', 'all'],
+        indent: ['error', 4,
+            {
+                SwitchCase: 1,
+            },
+        ],
+        'no-underscore-dangle': ['error', {
+            allow: ['_uid', '__NUXT__'],
+            allowAfterThis: false,
+            allowAfterSuper: false,
+            enforceInMethodNames: true,
+        }],
+        'no-script-url': 'warn',
+        'no-shadow': 'warn',
+        'no-shadow-restricted-names': 'warn',
+        'import/dynamic-import-chunkname': ['error', {
+            importFunctions: ['dynamicImport'],
+            webpackChunknameFormat: '[0-9a-zA-Z-_/.]+',
+        }],
+        'import/extensions': ['error', 'ignorePackages', {
+            js: 'never',
+            mjs: 'never',
+            jsx: 'never',
+            ts: 'never',
+            tsx: 'never',
+            json: 'never',
+            vue: 'never',
+        }],
+        'vue/attribute-hyphenation': ['error', 'never'],
+        'vue/attributes-order': ['error', {
+            order: [
+                'DEFINITION',
+                'LIST_RENDERING',
+                'CONDITIONALS',
+                'RENDER_MODIFIERS',
+                'GLOBAL',
+                'UNIQUE',
+                'TWO_WAY_BINDING',
+                'OTHER_DIRECTIVES',
+                'EVENTS',
+                'OTHER_ATTR',
+                'CONTENT',
+            ],
+        }],
+        'vue/html-indent': ['error', 4],
+        'vue/html-self-closing': ['error', {
+            html: {
+                void: 'never',
+                normal: 'never',
+                component: 'always',
+            },
+            svg: 'always',
+            math: 'always',
+        }],
+        'vue/require-v-for-key': 'warn',
+        'object-curly-spacing': ['error', 'never'],
+        'vue/script-indent': ['error', 4, {
+            baseIndent: 1,
+            switchCase: 1,
+        }],
+        'object-shorthand': ['error', 'always', {avoidQuotes: false}],
+        'newline-after-var': ['error', 'always'],
+        'newline-before-return': 'error',
+        'no-mixed-operators': [
+            'error',
+            {
+                groups: [
+                    ['+', '-', '*', '/', '%', '**'],
+                    ['&', '|', '^', '~', '<<', '>>', '>>>'],
+                    ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+                    ['&&', '||', '>', '>=', '<', '<='],
+                    ['in', 'instanceof'],
+                ],
+                allowSamePrecedence: true,
+            },
+        ],
+    },
+    overrides: [
+        {
+            files: ['*.vue'],
+            rules: {
+                indent: 'off',
+            },
+        },
+    ],
+    globals: {
+        globalThis: true,
+    },
+};
